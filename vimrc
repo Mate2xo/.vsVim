@@ -1,5 +1,5 @@
 set number relativenumber "show line numbers
-"colorscheme codedark
+colorscheme codedark
 set cursorline
 set showcmd "show last command entered in bottom bar
 
