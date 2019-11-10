@@ -1,35 +1,14 @@
 "=====> Plugins management <=====
-packadd minpac
-if !exists('*minpac#init')
-  echo "Pulling minpac package manager"
-  !git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-  source %
+source .minpac.vim
+if exists('*minpac#init')
+  "Plugins configuration
+  colorscheme codedark
+  set background=dark
 endif
-
-call minpac#init()
-"Base plugins
-call minpac#add('k-takata/minpac', {'type': 'opt'}) "Plugin manager
-call minpac#add('jiangmiao/auto-pairs') "auto-close {, [, (, ', ...
-call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', etc...
-
-"Add desired plugins here
-call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
-call minpac#add('tpope/vim-commentary') "'gcc' to comment lines
-call minpac#add('tpope/vim-endwise') "add 'end' automatically for ruby files
-call minpac#add('tpope/vim-rails')
-call minpac#add('tpope/vim-repeat') "'.' key to work also with plugins commands
-
-if !isdirectory($HOME . '/.vim/pack/minpac/start/vim-surround')
-  call minpac#update('') "to update/pull all packages
-endif
-"call minpac#clean() "to remove unlisted packages
-
 
 "=====> UX <=====
 set number relativenumber "show line numbers
 set cursorline
-colorscheme codedark
-set background=dark
 syntax enable "enable syntax processing
 
 set showcmd "show last command (partial) entered in bottom bar (status line)
