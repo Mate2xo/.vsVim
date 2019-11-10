@@ -1,15 +1,17 @@
 "=====> Plugins management <=====
-source .minpac.vim
-if exists('*minpac#init')
-  "Plugins configuration
-  colorscheme codedark
-  set background=dark
-endif
+" add/delete plugins in .minpac.vim
+" use :PackUpdate command inside Vim editor to install/update all plugins
+command! PackUpdate source .minpac.vim | call PackInit() | call minpac#update('', {'do': 'source $MYVIMRC'})
+" use :PackClean command to delete plugins not listed in .minpac.vim
+command! PackClean  source .minpac.vim | call PackInit() | call minpac#clean()
+command! PackStatus source .minpac.vim | call PackInit() | call minpac#status()
 
 "=====> UX <=====
 set number relativenumber "show line numbers
 set cursorline
 syntax enable "enable syntax processing
+colorscheme codedark
+set background=dark
 
 set showcmd "show last command (partial) entered in bottom bar (status line)
 set autowrite		" Automatically save before commands like :next and :make
