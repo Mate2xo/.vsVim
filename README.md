@@ -6,10 +6,11 @@ A simple, ready-to-use basic Vim IDE setup for web development with pre-configur
 
 ## Set up
 
-* Clone this repo in your ~/ folder
+* Check with `$ vim --version` if you have `+ruby` and `+python3` support. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`)
+* Clone this repo in your `~/` folder (I don't know how Vim works on Windows)
 * Open any file with Vim, and use the `:PackUpdate` command
 
-If you want to use some Ruby/Rails plugins added to this basic setup, switch your .vim folder to the `ruby-rails` branch
+If you want to use some Ruby/Rails plugins added to this basic setup, switch your cloned `~/.vim` folder to the `ruby-rails` branch
 
 ## What's included
 
