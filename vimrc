@@ -6,12 +6,15 @@ command! PackUpdate source .minpac.vim | call PackInit() | call minpac#update(''
 command! PackClean  source .minpac.vim | call PackInit() | call minpac#clean()
 command! PackStatus source .minpac.vim | call PackInit() | call minpac#status()
 
+" Plugins configuration
+colorscheme codedark
+set background=dark
+map <C-s-e> :NERDTreeToggle<CR>
+
 "=====> UX <=====
 set number relativenumber "show line numbers
 set cursorline
 syntax enable "enable syntax processing
-colorscheme codedark
-set background=dark
 
 set showcmd "show last command (partial) entered in bottom bar (status line)
 set autowrite		" Automatically save before commands like :next and :make

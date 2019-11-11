@@ -15,6 +15,10 @@ function! PackInit() abort
   call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', ...
   call minpac#add('tpope/vim-commentary') "'gcc' to comment lines
   call minpac#add('tpope/vim-endwise') "auto-insert 'end' keywords to 'if' control flows
+    " Search
+  call minpac#add('scrooloose/nerdtree') "file tree sidebar
+  call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
+  call minpac#add('ctrlpvim/ctrlp.vim') "quick lookup of/jump to a file with <C-p>
     " UI
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
 endfunction
