@@ -48,12 +48,12 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 
 
-"=====> Filetype dectection <=====
-  "language specific indentation file loading in .vim/indent/[languagueName].vim
-filetype indent on
-  "Load plugins according to the detected filetype.
+"=====> General <=====
+set nocompatible "Don't care about Vi compatibility
+"Load language specific indentation files (in ".vim/indent/[languagueName].vim),
+" and plugins according to the detected filetype.
 if has("autocmd")
-  filetype plugin on
+  filetype plugin indent on
 endif
 
 
