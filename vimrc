@@ -9,7 +9,17 @@ command! PackStatus source .minpac.vim | call PackInit() | call minpac#status()
 " Plugins configuration
 colorscheme codedark
 set background=dark
+
 map <C-s-e> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+map  <Leader>n  :NERDTreeFind<CR>
+
+let g:ale_fixers = {
+\  'javascript': ['prettier', 'eslint'],
+\  'css': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+
 
 "=====> UX <=====
 set number relativenumber "show line numbers
