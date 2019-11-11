@@ -31,10 +31,11 @@ set undodir=/tmp/.vim-undo-dir
 set undofile
 
   " TABs spaces setup
+set expandtab "turns TABs into spaces
 set tabstop=2 "number of visual space per TAB on file read
 set softtabstop=2 "number of space per TAB when editing
 set shiftwidth=2 "number of sapce per indentation (>>)
-set expandtab "turns TABs into spaces
+set autoindent
 
 
 "=====> Search <=====
