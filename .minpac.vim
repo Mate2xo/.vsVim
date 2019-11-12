@@ -33,6 +33,8 @@ function! PackInit() abort
       call minpac#add('roxma/nvim-yarp')
       call minpac#add('roxma/vim-hug-neovim-rpc')
     endif
+    call minpac#add('Shougo/neosnippet.vim')
+    call minpac#add('Shougo/neosnippet-snippets')
   else
     echo "Install Python3 to enable autocompletion through Deoplete plugin"
   endif
