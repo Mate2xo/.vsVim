@@ -23,8 +23,9 @@ function! PackInit() abort
   call minpac#add('ctrlpvim/ctrlp.vim') "quick lookup of/jump to a file with <C-p>
 
     " UI
-  call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
   call minpac#add('dense-analysis/ale') "asyncronous linter
+  call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
+  call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
   
     " Autocompletion
   if has('python3')

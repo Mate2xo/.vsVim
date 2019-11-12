@@ -1,3 +1,11 @@
+"=====> General <=====
+if &compatible
+  " `:set nocp` has many side effects. Therefore this should be done first
+  " and only when 'compatible' is set.
+  set nocompatible "Don't care about Vi compatibility 
+endif
+
+
 "=====> Plugins management <=====
 " add/delete plugins in minpac.vimrc
 " use :PackUpdate command inside Vim editor to install/update all plugins
@@ -20,6 +28,7 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
+set omnifunc=ale#completion#OmniFunc
 let g:deoplete#enable_at_startup = 1
 let jsServer=substitute(system('which javascript-typescript-stdio'), '\n', '', 'g')
 let g:LanguageClient_serverCommands = {
@@ -48,10 +57,10 @@ if has('conceal')
 endif
 
 
-"=====> UX <=====
+" Some default settings are set with Sensible plugin
+""=====> UX <=====
 set number relativenumber "show line numbers
 set cursorline
-syntax enable "enable syntax processing
 
 set showcmd "show last command (partial) entered in bottom bar (status line)
 set autowrite		" Automatically save before commands like :next and :make
@@ -75,31 +84,15 @@ set expandtab "turns TABs into spaces
 set tabstop=2 "number of visual space per TAB on file read
 set softtabstop=2 "number of space per TAB when editing
 set shiftwidth=2 "number of sapce per indentation (>>)
-set autoindent
 
 
 "=====> Search <=====
 set path+=** "search files also in subdirectories
-set wildmenu "visual autocomplete for command menu
+set ignorecase		" Do case insensitive matching
+set smartcase		" Do smart case matching
 
 packadd! matchit "activate matchit plugin, '%' jumps to html tags, if/else/end, etc
 set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
-set smartcase		" Do smart case matching
-set incsearch		" Incremental search
-
-
-"=====> General <=====
-if &compatible
-  " `:set nocp` has many side effects. Therefore this should be done
-  " only when 'compatible' is set.
-  set nocompatible "Don't care about Vi compatibility 
-endif
-"Load language specific indentation files (in ".vim/indent/[languagueName].vim),
-" and plugins according to the detected filetype.
-if has("autocmd")
-  filetype plugin indent on
-endif
 
 
 "=====> Miscellaneous <=====
