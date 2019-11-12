@@ -1,10 +1,10 @@
 "=====> Plugins management <=====
-" add/delete plugins in .minpac.vim
+" add/delete plugins in minpac.vimrc
 " use :PackUpdate command inside Vim editor to install/update all plugins
-command! PackUpdate source .minpac.vim | call PackInit() | call minpac#update('', {'do': 'source $MYVIMRC'})
-" use :PackClean command to delete plugins not listed in .minpac.vim
-command! PackClean  source .minpac.vim | call PackInit() | call minpac#clean()
-command! PackStatus source .minpac.vim | call PackInit() | call minpac#status()
+command! PackUpdate source ~/.vim/minpac.vimrc | call PackInit() | call minpac#update('', {'do': 'source $MYVIMRC'})
+" use :PackClean command to delete plugins not listed in minpac.vimrc
+command! PackClean  source ~/.vim/minpac.vimrc | call PackInit() | call minpac#clean()
+command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#status()
 
 " Plugins configuration
 colorscheme codedark

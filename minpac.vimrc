@@ -33,6 +33,7 @@ function! PackInit() abort
       call minpac#add('roxma/nvim-yarp')
       call minpac#add('roxma/vim-hug-neovim-rpc')
     endif
+    call minpac#add('Shougo/neco-syntax')
     call minpac#add('Shougo/neosnippet.vim')
     call minpac#add('Shougo/neosnippet-snippets')
   else
