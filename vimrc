@@ -18,8 +18,9 @@ command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#s
 colorscheme codedark
 set background=dark
 
-map <C-s-e> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
+let NERDTreeShowLineNumbers=1
+map <C-s-e> :NERDTreeToggle<CR>
 map  <Leader>n  :NERDTreeFind<CR>
 
 let g:ale_fixers = {
