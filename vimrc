@@ -61,6 +61,7 @@ endif
 ""=====> UX <=====
 set number relativenumber "show line numbers
 set cursorline
+set termguicolors
 
 set showcmd "show last command (partial) entered in bottom bar (status line)
 set autowrite		" Automatically save before commands like :next and :make
