@@ -20,6 +20,16 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
+let g:deoplete#enable_at_startup = 1
+let jsServer=substitute(system('which javascript-typescript-stdio'), '\n', '', 'g')
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': [jsServer],
+    \ }
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
 
 "=====> UX <=====
 set number relativenumber "show line numbers
@@ -63,7 +73,11 @@ set incsearch		" Incremental search
 
 
 "=====> General <=====
-set nocompatible "Don't care about Vi compatibility
+if &compatible
+  " `:set nocp` has many side effects. Therefore this should be done
+  " only when 'compatible' is set.
+  set nocompatible "Don't care about Vi compatibility 
+endif
 "Load language specific indentation files (in ".vim/indent/[languagueName].vim),
 " and plugins according to the detected filetype.
 if has("autocmd")

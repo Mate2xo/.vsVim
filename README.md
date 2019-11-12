@@ -7,8 +7,10 @@ A simple, ready-to-use basic Vim IDE setup for web development with pre-configur
 ## Set up
 
 * Check with `$ vim --version` if you have `+ruby` and `+python3` support. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`)
+* python3 should be installed, as well as `pynvim`(`$ pip3 install --user pynvim`) for Deoplete plugin
 * Clone this repo in your `~/` folder (I don't know how Vim works on Windows)
 * Open any file with Vim, and use the `:PackUpdate` command
+* Restart Vim
 
 If you want to use some Ruby/Rails plugins added to this basic setup, switch your cloned `~/.vim` folder to the `ruby-rails` branch
 
@@ -27,6 +29,9 @@ If you want to use some Ruby/Rails plugins added to this basic setup, switch you
   * If your local project has no linting setup, ALE will fetch your global linter configuration (if it exists)
   * Add options to `ale_fixers` options in `vimrc` to activate auto-formatting
   * documentation: `:help ale`
+* Autocompletion : [deoplete](https://github.com/Shougo/deoplete.nvim)
+  * [Language-Client-neovim](https://github.com/autozimu/LanguageClient-neovim) is used to connect deoplete and Language Servers
+  * Javascript LSP use javascript-typescript-langserver npm package;
 
 ## Contributions
 
