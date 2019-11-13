@@ -1,4 +1,5 @@
-# Vim plugins and tmp files
+# Vim tmp and plugins files
 pack/minpac/start/**
+view/**
 .netrwhist
 *.swp

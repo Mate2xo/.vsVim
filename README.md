@@ -2,15 +2,14 @@
 
 ## What's this?
 
-A simple, ready-to-use basic Vim IDE setup for web development with pre-configured plugin management. It's an attempt to bring VSCode's feel into Vim, as VSCode can unfortunately get very laggy sometimes.
+A simple, ready-to-use basic Vim IDE setup for web development with pre-configured plugin management. It's an attempt to bring a VSCode-like feel into Vim
 
 ## Set up
 
 * Check with `$ vim --version` if you have `+ruby` and `+python3` support. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`)
-* python3 should be installed, as well as `pynvim`(`$ pip3 install --user pynvim`) for Deoplete plugin
+* `python3` should be installed on your local machine, as well as `pynvim`(`$ pip3 install --user pynvim`) for Deoplete plugin
 * Clone this repo in your `~/` folder (I don't know how Vim works on Windows, sorry)
-* Open any file with Vim, and use the `:PackUpdate` command
-* Restart Vim
+* Install plugins with `$ vim +PackUpdate` (you might need to restart vim)
 
 If you want to use some Ruby/Rails plugins added to this basic setup, switch your cloned `~/.vim` folder to the `ruby-rails` branch
 
