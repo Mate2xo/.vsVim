@@ -13,28 +13,29 @@ function! PackInit() abort
 
     " Edition
   call minpac#add('jiangmiao/auto-pairs') "auto-close {, [, (, ', ...
-  call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', ...
   call minpac#add('tpope/vim-commentary') "'gcc' to comment lines
   call minpac#add('tpope/vim-endwise') "auto-insert 'end' keywords to 'if' control flows
+  call minpac#add('mattn/emmet-vim') "http://emmet.io
+  call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', ...
 
     " Search
+  call minpac#add('ctrlpvim/ctrlp.vim') "quick lookup of/jump to a file with <C-p>
   call minpac#add('scrooloose/nerdtree') "file tree sidebar
   call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
-  call minpac#add('ctrlpvim/ctrlp.vim') "quick lookup of/jump to a file with <C-p>
 
     " UI
   call minpac#add('dense-analysis/ale') "asyncronous linter
-  call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
+  call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
   
     " Autocompletion
   if has('python3')
-    call minpac#add('Shougo/deoplete.nvim')
+    call minpac#add('Shougo/deoplete.nvim') "async autocompleter
     if !has('nvim')
       call minpac#add('roxma/nvim-yarp')
       call minpac#add('roxma/vim-hug-neovim-rpc')
     endif
-    call minpac#add('Shougo/neco-syntax')
+    call minpac#add('Shougo/neco-syntax') "multiple lang support
     call minpac#add('Shougo/neosnippet.vim')
     call minpac#add('Shougo/neosnippet-snippets')
   else
