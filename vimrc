@@ -17,6 +17,8 @@ command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#s
 " Plugins configuration
 colorscheme codedark
 
+nmap <C-p> :FZF<CR>
+
   " NERDTree
   let NERDTreeQuitOnOpen=1
   let NERDTreeShowLineNumbers=1
