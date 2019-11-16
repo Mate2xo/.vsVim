@@ -44,12 +44,16 @@ function! PackInit() abort
 
   function! Setup_LSPs(hooktype, name)
     !bash install.sh
-    echo "Sudo permission is required to install javascript LSP"
+
+    " add required packages for desired language servers here
+    !echo "Sudo permission is required to install javascript LSP"
     !sudo npm i -g javascript-typescript-langserver
   endfunction
+
   call minpac#add('autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
       \ 'do': function('Setup_LSPs'),
       \ }) 
-  echo "Please restart Vim after updating plugins"
+
+  echo "Please wait... and restart Vim after updating plugins"
 endfunction
