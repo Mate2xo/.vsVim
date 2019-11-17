@@ -57,4 +57,4 @@ If you want to add your customizations to this setup, without overwriting the `~
 
 Any suggestions would be very welcome!
 I am a beginner Vim user, so some config errors might have been made. I tried to make everything clean though ; any pull request would be apreciated.
-Also, CoC seems to be a better fit for the VSCode feel, instead of Deoplete. But Deoplete seems faster, which is very important for older PCs. I will check this option.
+Also, CoC seems to be a better fit for the VSCode feel, instead of Deoplete. But Deoplete seems faster, which is very important for older PCs. Please share your insights if you think one option is better than another.
