@@ -25,7 +25,7 @@ If you want to add your customizations to this setup, without overwriting the `~
 
 ## What's included / How to use
 
-* [minpac plugin manager](https://github.com/k-takata/minpac): just put the repo names of the plugins you want to add in `custom.vimrc`, taking example on what's already included in `minpac.vimrc`, and run `:PackUpdate`, and/or `:PackClean` to delete plugins that are not listed there.
+* [minpac plugin manager](https://github.com/k-takata/minpac): just put the repo names of the plugins you want to add in `custom_plugins.vimrc` (take example on what's already included in `minpac.vimrc`), and run `:PackUpdate`, and/or `:PackClean` to delete plugins that are not listed there.
 * Essentials:
   * [vim-repeat](https://github.com/tpope/vim-repeat): allow `.` command to be also usable for plugin commands
   * [vim-sensible](https://github.com/tpope/vim-sensible): set sensible vimrc defaults
