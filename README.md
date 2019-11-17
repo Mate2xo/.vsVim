@@ -2,24 +2,30 @@
 
 ## What's this?
 
-A simple, ready-to-use basic Vim IDE setup for web development with pre-configured plugin management. It's an attempt to bring VSCode's feel into Vim, and is aimed at beginner Vim users to get up and running quickly
+A simple, ready-to-use basic Vim IDE setup for web development with pre-configured plugin management. It's an attempt to bring VSCode's feel into Vim (as VSCode became too slow for me), and is aimed at beginner Vim users to get up and running quickly.
 
 ## Set up
 
-* Check with `$ vim --version` if you have `+ruby` and `+python3` support. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`)
+* Check with `$ vim --version` if you have `+ruby` and `+python3` support. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`). If you don't care about Ruby programming, then just check that `+python3` support is enabled.
 * `python3` should be installed on your local machine, as well as `pynvim`(`$ pip3 install --user pynvim`) for Deoplete plugin
 
-## Install
+### Install
 
-* Clone this repo in your `~/` folder for linux users, or your default vim config folder for other OSs.
-* Lauch vim with `$ vim +PackUpdate` command
+* Clone this repo in your `~/` folder for linux users, or your default vim config folder for other OS (I don't know how other OS are setup with Vim, sorry).
+* Launch vim with `$ vim +PackUpdate` command
 * Restart Vim and start working
 
-If you want to use some Ruby/Rails plugins added to this basic setup, switch your cloned `~/.vim` folder to the `ruby-rails` branch
+### Customization
+
+For different flavors of this basic setup switch your cloned `~/.vim` folder's branch:
+* to the `ruby-rails` branch for up-to-date ruby support and rails very useful shortcuts (`:help rails`)
+* to the `lite` branch for a version without language servers (snappier on older PCs). --work in progress
+
+If you want to add your customizations to this setup, without overwriting the `~/.vim` folder when you update this repo, use the `custom_*.vimrc` files instead. These files are pulled at the end of `vimrc` and `minpac.vimrc`.
 
 ## What's included / How to use
 
-* [minpac plugin manager](https://github.com/k-takata/minpac): just put the repo names of the plugins you want in `minpac.vimrc`, and run `:PackUpdate`, and/or `:PackClean` to delete plugins that are not listed there.
+* [minpac plugin manager](https://github.com/k-takata/minpac): just put the repo names of the plugins you want to add in `custom.vimrc`, taking example on what's already included in `minpac.vimrc`, and run `:PackUpdate`, and/or `:PackClean` to delete plugins that are not listed there.
 * Essentials:
   * [vim-repeat](https://github.com/tpope/vim-repeat): allow `.` command to be also usable for plugin commands
   * [vim-sensible](https://github.com/tpope/vim-sensible): set sensible vimrc defaults
@@ -41,7 +47,14 @@ If you want to use some Ruby/Rails plugins added to this basic setup, switch you
   * Javascript LSP use javascript-typescript-langserver npm package, and will be installed with Language-Client-Neovim
   * [Neosnippet](https://github.com/Shougo/neosnippet.vim) adds snippets for many languages. Use `<Ctrl-K>` to expand the selected suggestion in the popup while typing.
 
-## Contributions
+## What's next
 
-Any suggestions would be very welcome
+* Find a way to make Fzf work not only for files names, but also files content
+* Make auto-completion less clunky : in certain cases, suggestions have nothing to do with the context (especially `<Ctrl-X><Ctrl-O>` command. Especially useful for `lite` branches of this repo. Maybe switch to CoC?
+* Get full compatibilty with Neovim (should be ok for most things, give me some feedback if I can update something)
 
+### Contributions
+
+Any suggestions would be very welcome!
+I am a beginner Vim user, so some config errors might have been made. I tried to make everything clean though ; any pull request would be apreciated.
+Also, CoC seems to be a better fit for the VSCode feel, instead of Deoplete. But Deoplete seems faster, which is very important for older PCs. I will check this option.

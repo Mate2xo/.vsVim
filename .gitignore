@@ -1,6 +1,10 @@
-# Vim tmp and plugins files
-pack/minpac/start/**
-view/**
+# Vim tmp
 .netrwhist
 *.swp
+*.swo
 view/
+
+# Plugin/config files
+pack/minpac/start/
+custom_settings.vimrc
+custom_plugins.vimrc

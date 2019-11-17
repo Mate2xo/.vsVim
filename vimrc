@@ -111,12 +111,5 @@ set showmatch		" Show matching brackets.
 
 
 "===============> Miscellaneous <===============
-  "get a block cursor in GitBash
-  let &t_ti.="\e[1 q"
-  let &t_SI.="\e[5 q"
-  let &t_EI.="\e[1 q"
-  let &t_te.="\e[0 q"
-
-
 " Pull custom configurations
-source ~/.vim/custom.vimrc
+source ~/.vim/custom_settings.vimrc

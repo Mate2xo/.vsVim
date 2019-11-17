@@ -55,5 +55,6 @@ function! PackInit() abort
       \ 'do': function('Setup_LSPs'),
       \ }) 
 
+  source ~/.vim/custom_plugins.vimrc
   echo "Please wait... and restart Vim after updating plugins"
 endfunction
