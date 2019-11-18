@@ -6,8 +6,14 @@ A simple, ready-to-use basic Vim IDE setup for web development with pre-configur
 
 ## Set up
 
+### Required
+
 * Check with `$ vim --version` if you have `+ruby` and `+python3` support. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`). If you don't care about Ruby programming, then just check that `+python3` support is enabled.
 * `python3` should be installed on your local machine, as well as `pynvim`(`$ pip3 install --user pynvim`) for Deoplete plugin
+
+### Optional
+
+* Install [The Silver Searcher (Ag)](https://github.com/ggreer/the_silver_searcher) to be able to search a pattern through file with `<Ctrl-F>` (equivalent of `<Ctrl-Shift-F>` in VScode)
 
 ### Install
 
@@ -35,8 +41,8 @@ If you want to add your customizations to this setup, without overwriting the `~
   * [auto-pair](https://github.com/jiangmiao/auto-pairs): auto-close {[("")]}
   * [vim-surround](https://github.com/tpope/vim-surround): quickly change surrounding {[("")]}
 * Search plugins:
-  * [NERDTree](https://github.com/scrooloose/nerdtree) (file explorer). Access with `<Ctrl><E>`, acces file menu with `m`. Documentation: `:help nerdtree`.
-  * [FZF](https://github.com/junegunn/fzf.vim): Access fuzzy file search with `<Ctrl-P>`. Documentation: `:help fzf`
+  * [NERDTree](https://github.com/scrooloose/nerdtree) (file explorer). Access with `<Ctrl-E>`, acces file menu with `m`. Documentation: `:help nerdtree`.
+  * [FZF](https://github.com/junegunn/fzf.vim): Access fuzzy file search with `<Ctrl-P>`, fuzzy pattern search in files with `<Ctrl-F>`. Documentation: `:help fzf`
 * Linting: [ALE](https://github.com/dense-analysis/ale), linting manager
   * Will use whatever linter is already installed on your machine, out-of-the-box most of the time.
   * If your local project has no linting setup, ALE will fetch your global linter configuration according to the filetype (if it exists). Type `:ALEInfo` to know how linters are used on the current file
@@ -44,12 +50,11 @@ If you want to add your customizations to this setup, without overwriting the `~
   * Documentation: `:help ale`
 * Autocompletion : [deoplete](https://github.com/Shougo/deoplete.nvim)
   * [Language-Client-neovim](https://github.com/autozimu/LanguageClient-neovim) is used to connect deoplete and Language Servers
-  * Javascript LSP use javascript-typescript-langserver npm package, and will be installed with Language-Client-Neovim
+  * Javascript LSP use javascript-typescript-langserver [npm](https://www.npmjs.com/get-npm) package, and will be installed with Language-Client-Neovim
   * [Neosnippet](https://github.com/Shougo/neosnippet.vim) adds snippets for many languages. Use `<Ctrl-K>` to expand the selected suggestion in the popup while typing.
 
 ## What's next
 
-* Find a way to make Fzf work not only for files names, but also files content
 * Make auto-completion less clunky : in certain cases, suggestions have nothing to do with the context (especially `<Ctrl-X><Ctrl-O>` command. Especially useful for `lite` branches of this repo. Maybe switch to CoC?
 * Get full compatibilty with Neovim (should be ok for most things, give me some feedback if I can update something)
 

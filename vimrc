@@ -20,7 +20,12 @@ colorscheme codedark
   " FZF
   set rtp+=~/.vim/pack/minpac/start/fzf
   nmap <C-p> :FZF<CR>
-  nmap ; :Buffers<CR>
+  nmap <C-f> :Ag<CR>
+  command! -bang -nargs=* Ag
+    \ call fzf#vim#ag(<q-args>,
+    \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+    \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \                 <bang>0)
   nmap <Leader>t :Tags<CR>
 
   " NERDTree
