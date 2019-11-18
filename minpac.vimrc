@@ -19,7 +19,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', ...
 
     " Search
-  call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }) "quick lookup of/jump to a file with <C-p>
+  call minpac#add('junegunn/fzf', { 'do': './install --bin' }) "quick lookup of/jump to a file with <C-p>
   call minpac#add('junegunn/fzf.vim')
   call minpac#add('scrooloose/nerdtree') "file tree sidebar
   call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
