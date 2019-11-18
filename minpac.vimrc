@@ -19,7 +19,8 @@ function! PackInit() abort
   call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', ...
 
     " Search
-  call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }) "quick lookup of/jump to a file with <C-p>
+  call minpac#add('junegunn/fzf', { 'do': './install --bin' }) "quick lookup of/jump to a file with <C-p>
+  call minpac#add('junegunn/fzf.vim')
   call minpac#add('scrooloose/nerdtree') "file tree sidebar
   call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
 
@@ -27,6 +28,9 @@ function! PackInit() abort
   call minpac#add('dense-analysis/ale') "asyncronous linter
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
+  
+    " Language support
+  call minpac#add('sheerun/vim-polyglot')
   
     " Autocompletion
   if has('python3')
