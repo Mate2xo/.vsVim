@@ -5,10 +5,6 @@ if &compatible
   set nocompatible "Don't care about Vi compatibility 
 endif
 
-" You want utf-8 by default
-set encoding=utf-8
-
-
 
 "===============> Plugins management <===============
 " add/delete plugins in minpac.vimrc
@@ -21,14 +17,11 @@ command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#s
 " Plugins configuration
 colorscheme codedark
 
-nmap <C-p> :FZF<CR>
-
-" FZF better conf
-set rtp+=/usr/local/opt/fzf
-nmap ; :Buffers<CR>
-nmap <Leader>e :Files<CR>
-nmap <Leader>r :Tags<CR>
-
+  " FZF
+  set rtp+=~/.vim/pack/minpac/start/fzf
+  nmap <C-p> :FZF<CR>
+  nmap ; :Buffers<CR>
+  nmap <Leader>t :Tags<CR>
 
   " NERDTree
   let NERDTreeQuitOnOpen=1
@@ -81,41 +74,29 @@ nmap <Leader>r :Tags<CR>
 "===============> UX <===============
 set number relativenumber "show line numbers
 set cursorline
-set termguicolors  "24 bits colors
-" Make truecolors work better for tmux
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 
+set termguicolors  "24 bits colors
+  " Make truecolors work better for tmux
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 
 set showcmd "show last command (partial) entered in bottom bar (status line)
 set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
+
 set mouse=a		" Enable mouse usage (all modes)
-" mouse support on more than 220 cols
-set ttymouse=sgr
+set ttymouse=sgr  " mouse support on more than 220 cols
 
-" Try to autoindent
-set autoindent
 set smartindent
-set smarttab
+set tw:1337   " Don't set a line limit size
 
-" Better search
-set hls is
-set incsearch
+set clipboard=unnamed   " Link to OS clipboard
 
-" Don't set a line limit size
-set tw:1337
-
-" Link to os clipboard
-set clipboard=unnamed
-
-" Allow syntax folding
-set foldmethod=syntax   
-set foldnestmax=10
-" set nofoldenable
-set foldlevel=100
-nnoremap <Space> za
-
+  " Allow syntax folding
+  set foldmethod=syntax   
+  set foldnestmax=10
+  set foldlevel=100   " set nofoldenable
+  nnoremap <Space> za
 
   " Jump to the last position when reopening a file
   if has("autocmd")
@@ -145,6 +126,7 @@ nnoremap <Space> za
 set path+=** "search files also in subdirectories
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
+set hls is  " hilight search matches
 
 packadd! matchit "activate matchit plugin, '%' jumps to html tags, if/else/end, etc
 set showmatch		" Show matching brackets.
