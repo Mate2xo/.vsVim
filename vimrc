@@ -17,7 +17,11 @@ command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#s
 " Plugins configuration
 colorscheme codedark
 
-nmap <C-p> :FZF<CR>
+  " FZF
+  set rtp+=~/.vim/pack/minpac/start/fzf
+  nmap <C-p> :FZF<CR>
+  nmap ; :Buffers<CR>
+  nmap <Leader>t :Tags<CR>
 
   " NERDTree
   let NERDTreeQuitOnOpen=1
@@ -70,12 +74,29 @@ nmap <C-p> :FZF<CR>
 "===============> UX <===============
 set number relativenumber "show line numbers
 set cursorline
+
 set termguicolors  "24 bits colors
+  " Make truecolors work better for tmux
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 
 set showcmd "show last command (partial) entered in bottom bar (status line)
 set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
+
 set mouse=a		" Enable mouse usage (all modes)
+set ttymouse=sgr  " mouse support on more than 220 cols
+
+set smartindent
+set tw:1337   " Don't set a line limit size
+
+set clipboard=unnamed   " Link to OS clipboard
+
+  " Allow syntax folding
+  set foldmethod=syntax   
+  set foldnestmax=10
+  set foldlevel=100   " set nofoldenable
+  nnoremap <Space> za
 
   " Jump to the last position when reopening a file
   if has("autocmd")
@@ -105,6 +126,7 @@ set mouse=a		" Enable mouse usage (all modes)
 set path+=** "search files also in subdirectories
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
+set hls is  " hilight search matches
 
 packadd! matchit "activate matchit plugin, '%' jumps to html tags, if/else/end, etc
 set showmatch		" Show matching brackets.
