@@ -5,6 +5,8 @@ if &compatible
   set nocompatible "Don't care about Vi compatibility 
 endif
 
+nmap <Space> <Leader>
+
 
 "===============> Plugins management <===============
 " add/delete plugins in minpac.vimrc
@@ -19,8 +21,9 @@ colorscheme codedark
 
   " FZF
   set rtp+=~/.vim/pack/minpac/start/fzf
-  nmap <C-p> :FZF<CR>
-  nmap <C-f> :Ag<CR>
+  nmap <Leader>p :FZF<CR>
+  nmap <Leader>h :Helptags<CR>
+  nmap <Leader>f :Ag<CR>
   command! -bang -nargs=* Ag
     \ call fzf#vim#ag(<q-args>,
     \                 <bang>0 ? fzf#vim#with_preview('up:60%')
@@ -32,13 +35,14 @@ colorscheme codedark
   let NERDTreeQuitOnOpen=1
   let NERDTreeShowLineNumbers=1
   let NERDTreeAutoDeleteBuffer = 1
-  map <C-s-e> :NERDTreeToggle<CR>
-  map  <Leader>n  :NERDTreeFind<CR>
+  nmap <Leader>e :NERDTreeToggle<CR>
+  nmap <Leader>n  :NERDTreeFind<CR>
 
   " ALE
   let g:ale_fixers = {
   \  'javascript': ['prettier', 'eslint'],
   \  'css': ['prettier'],
+  \  'ruby': ['rubocop'],
   \}
   let g:ale_fix_on_save = 1
 
@@ -71,7 +75,7 @@ colorscheme codedark
     \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
         " For conceal markers.
     if has('conceal')
-      set conceallevel=2 concealcursor=niv
+      set conceallevel=2 concealcursor=nv
     endif
 
 
@@ -79,6 +83,22 @@ colorscheme codedark
 "===============> UX <===============
 set number relativenumber "show line numbers
 set cursorline
+  "get a block cursor in GitBash, change shape when going in Insert mode
+  let &t_ti.="\e[1 q"
+  let &t_SI.="\e[5 q"
+  let &t_EI.="\e[1 q"
+  let &t_te.="\e[0 q"
+
+set smartindent
+set tw:1337   " Don't set a line limit size
+  " TABs spaces setup
+  set expandtab "turns TABs into spaces
+  set tabstop=2 "number of visual space per TAB on file read
+  set softtabstop=2 "number of space per TAB when editing
+  set shiftwidth=2 "number of sapce per indentation (>>)
+
+set mouse=a		" Enable mouse usage (all modes)
+set ttymouse=sgr  " mouse support on more than 220 cols
 
 set termguicolors  "24 bits colors
   " Make truecolors work better for tmux
@@ -88,21 +108,6 @@ set termguicolors  "24 bits colors
 set showcmd "show last command (partial) entered in bottom bar (status line)
 set autowrite		" Automatically save before commands like :next and :make
 set hidden		" Hide buffers when they are abandoned
-
-set mouse=a		" Enable mouse usage (all modes)
-set ttymouse=sgr  " mouse support on more than 220 cols
-
-set smartindent
-set tw:1337   " Don't set a line limit size
-
-set clipboard=unnamed   " Link to OS clipboard
-
-  " Allow syntax folding
-  set foldmethod=syntax   
-  set foldnestmax=10
-  set foldlevel=100   " set nofoldenable
-  nnoremap <Space> za
-
   " Jump to the last position when reopening a file
   if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -115,16 +120,17 @@ set clipboard=unnamed   " Link to OS clipboard
   set undodir=/tmp/.vim-undo-dir
   set undofile
 
+set clipboard=unnamed   " Link to OS clipboard
+
+" Allow syntax folding
+  set foldmethod=syntax   
+  set foldnestmax=10
+  set foldlevel=100   " set nofoldenable
+  highlight Folded guifg=darkYellow
+
   " Save line folds history
   autocmd BufWinLeave * if expand("%") != "" | mkview | endif
   autocmd BufWinEnter * if expand("%") != "" | loadview | endif
-  highlight Folded guifg=darkYellow
-  
-  " TABs spaces setup
-  set expandtab "turns TABs into spaces
-  set tabstop=2 "number of visual space per TAB on file read
-  set softtabstop=2 "number of space per TAB when editing
-  set shiftwidth=2 "number of sapce per indentation (>>)
 
 
 "===============> Search <===============
@@ -138,5 +144,6 @@ set showmatch		" Show matching brackets.
 
 
 "===============> Miscellaneous <===============
+
 " Pull custom configurations
 source ~/.vim/custom_settings.vimrc

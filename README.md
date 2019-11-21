@@ -31,6 +31,8 @@ If you want to add your customizations to this setup, without overwriting the `~
 
 ## What's included / How to use
 
+Global documentation fuzzy search is available with `<Space-H>`
+
 * [minpac plugin manager](https://github.com/k-takata/minpac): just put the repo names of the plugins you want to add in `custom_plugins.vimrc` (take example on what's already included in `minpac.vimrc`), and run `:PackUpdate`, and/or `:PackClean` to delete plugins that are not listed there.
 * Essentials:
   * [vim-repeat](https://github.com/tpope/vim-repeat): allow `.` command to be also usable for plugin commands
@@ -39,10 +41,10 @@ If you want to add your customizations to this setup, without overwriting the `~
   * [vim-commnentary](https://github.com/tpope/vim-commentary): `gcc` to comment a line of code
   * [vim-endwise](https://github.com/tpope/vim-endwise): auto-add 'end' keywords to 'if', 'def', ... statements
   * [auto-pair](https://github.com/jiangmiao/auto-pairs): auto-close {[("")]}
-  * [vim-surround](https://github.com/tpope/vim-surround): quickly change surrounding {[("")]}
+  * [vim-surround](https://github.com/tpope/vim-surround): quickly change surrounding {[("")]} : ``cs[{`` -> Changes Surrounding [] into {}
 * Search plugins:
-  * [NERDTree](https://github.com/scrooloose/nerdtree) (file explorer). Access with `<Ctrl-E>`, acces file menu with `m`. Documentation: `:help nerdtree`.
-  * [FZF](https://github.com/junegunn/fzf.vim): Access fuzzy file search with `<Ctrl-P>`, fuzzy pattern search in files with `<Ctrl-F>`. Documentation: `:help fzf`
+  * [NERDTree](https://github.com/scrooloose/nerdtree) (file explorer). Access with `<Space-E>`, once inside acces file menu with `m`. Documentation: `:help nerdtree`.
+  * [FZF](https://github.com/junegunn/fzf.vim): Access fuzzy file search with `<Space-P>`, fuzzy pattern search in files with `<Space-F>`. Documentation: `:help fzf`
 * Linting: [ALE](https://github.com/dense-analysis/ale), linting manager
   * Will use whatever linter is already installed on your machine, out-of-the-box most of the time.
   * If your local project has no linting setup, ALE will fetch your global linter configuration according to the filetype (if it exists). Type `:ALEInfo` to know how linters are used on the current file
