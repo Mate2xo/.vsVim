@@ -40,20 +40,11 @@ Global documentation fuzzy search is available with `<Space-H>`
 * Edition
   * [vim-commnentary](https://github.com/tpope/vim-commentary): `gcc` to comment a line of code
   * [vim-endwise](https://github.com/tpope/vim-endwise): auto-add 'end' keywords to 'if', 'def', ... statements
-  * [auto-pair](https://github.com/jiangmiao/auto-pairs): auto-close {[("")]}
   * [vim-surround](https://github.com/tpope/vim-surround): quickly change surrounding {[("")]} : ``cs[{`` -> Changes Surrounding [] into {}
 * Search plugins:
   * [NERDTree](https://github.com/scrooloose/nerdtree) (file explorer). Access with `<Space-E>`, once inside acces file menu with `m`. Documentation: `:help nerdtree`.
   * [FZF](https://github.com/junegunn/fzf.vim): Access fuzzy file search with `<Space-P>`, fuzzy pattern search in files with `<Space-F>`. Documentation: `:help fzf`
-* Linting: [ALE](https://github.com/dense-analysis/ale), linting manager
-  * Will use whatever linter is already installed on your machine, out-of-the-box most of the time.
-  * If your local project has no linting setup, ALE will fetch your global linter configuration according to the filetype (if it exists). Type `:ALEInfo` to know how linters are used on the current file
-  * Add options to `ale_fixers` options in `vimrc` to activate auto-formatting. [Prettier](https://prettier.io) is set by default to auto-format css and javascript code on save.
-  * Documentation: `:help ale`
-* Autocompletion : [deoplete](https://github.com/Shougo/deoplete.nvim)
-  * [Language-Client-neovim](https://github.com/autozimu/LanguageClient-neovim) is used to connect deoplete and Language Servers
-  * Javascript LSP use javascript-typescript-langserver [npm](https://www.npmjs.com/get-npm) package, and will be installed with Language-Client-Neovim
-  * [Neosnippet](https://github.com/Shougo/neosnippet.vim) adds snippets for many languages. Use `<Ctrl-K>` to expand the selected suggestion in the popup while typing.
+* Autocompletion, linting, formatting, snippets, coffee, ... [CoC](https://github.com/neoclide/coc.nvim)
 
 ## What's next
 

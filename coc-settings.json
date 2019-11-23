@@ -1,0 +1,5 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "javascriptreact", "json"],
+  "prettier.eslintIntegration": true,
+  "suggest.noselect": false
+}
