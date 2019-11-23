@@ -63,7 +63,8 @@ set omnifunc=syntaxcomplete#Complete
         \ 'coc-emmet',
         \ 'coc-prettier',
         \ 'coc-eslint',
-        \ 'coc-pairs'
+        \ 'coc-pairs',
+        \ 'coc-solargraph',
         \]
 
   set hidden " if hidden is not set, TextEdit might fail.

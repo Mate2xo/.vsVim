@@ -29,6 +29,7 @@ function! PackInit() abort
   
     " Language support
   call minpac#add('sheerun/vim-polyglot')
+  call minpac#add('tpope/vim-rails')
   
     " Autocompletion
   call minpac#add('neoclide/coc.nvim', {'branch': 'release'})

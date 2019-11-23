@@ -1,5 +1,15 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "javascriptreact", "json"],
   "prettier.eslintIntegration": true,
-  "suggest.noselect": false
+  "suggest.noselect": false,
+  "solargraph.useBundler": true,
+  "solargraph.diagnostics": true,
+  "solargraph.completion": true,
+  "solargraph.hover": true,
+  "solargraph.rename": true,
+  "solargraph.formatting": true,
+  "solargraph.symbols": true,
+  "solargraph.definitions": true,
+  "solargraph.references": true,
+  "solargraph.folding": true
 }
