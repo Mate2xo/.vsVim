@@ -23,8 +23,8 @@ function! PackInit() abort
   call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
 
     " UI
+  call minpac#add('mate2xo/noise-conceal') " replace common keywords with short symbols
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
-  call minpac#add('Yggdroot/indentLine') "nested-level vertical lines
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
   
     " Language support

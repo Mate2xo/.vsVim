@@ -34,8 +34,6 @@ command! PackClean  source ~/.vim/minpac.vimrc | call PackInit() | call minpac#c
 command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#status()
 
 colorscheme codedark
-let g:indentLIne_setConceal = 0 "give conceal control back from plugin
-let g:indentLine_concealcursor = 'n'
 
 " FZF
   set rtp+=~/.vim/pack/minpac/start/fzf
