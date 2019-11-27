@@ -2,7 +2,7 @@
 if &compatible
   " `:set nocp` has many side effects. Therefore this should be done first
   " and only when 'compatible' is set.
-  set nocompatible "Don't care about Vi compatibility 
+  set nocompatible "Don't care about Vi compatibility
 endif
 
 " Keyboard Shortcuts
@@ -11,7 +11,7 @@ endif
   vmap <C-_> gc
 
   "File explorer
-  nmap <Leader>E :NERDTreeToggle<CR> 
+  nmap <Leader>E :NERDTreeToggle<CR>
   nmap <Leader>n  :NERDTreeFind<CR>
 
   " Fuzzy search
@@ -50,7 +50,7 @@ colorscheme codedark
 
 " Autocompletion : Deoplete, LanguageClient, LSPs
 set omnifunc=syntaxcomplete#Complete
-  
+
 " CoC
 "  Extensions
   let g:coc_global_extensions = [
@@ -230,7 +230,7 @@ set hidden		" Hide buffers when they are abandoned
 set clipboard=unnamed   " Link to OS clipboard
 
 " Allow syntax folding
-  set foldmethod=syntax   
+  set foldmethod=syntax
   set foldnestmax=10
   set foldlevel=100   " set nofoldenable
   highlight Folded guifg=darkYellow
@@ -241,7 +241,7 @@ set clipboard=unnamed   " Link to OS clipboard
 
 " For conceal markers. (automatically hide/change some characters)
   if has('conceal')
-    set conceallevel=2 
+    set conceallevel=2
     set concealcursor=n "hide only in Normal mode
   endif
 
@@ -260,5 +260,5 @@ set showmatch		" Show matching brackets.
 
 "===============> Miscellaneous <===============
 
-" Uncomment the following line to pull any local custom configurations. 
+" Uncomment the following line to pull any local custom configurations.
 " source ~/.vim/custom_settings.vimrc
