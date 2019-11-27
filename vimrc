@@ -203,7 +203,9 @@ set tw:1337   " Don't set a line limit size
   set shiftwidth=2 "number of sapce per indentation (>>)
 
 set mouse=a		" Enable mouse usage (all modes)
-set ttymouse=sgr  " mouse support on more than 220 cols
+if !has('nvim')
+  set ttymouse=sgr  " mouse support on more than 220 cols
+endif
 
 set termguicolors  "24 bits colors
   " Make truecolors work better for tmux
@@ -250,7 +252,9 @@ set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
 set hls is  " hilight search matches
 
-packadd! matchit "activate matchit plugin, '%' jumps to html tags, if/else/end, etc
+if !has('nvim')
+  packadd! matchit "activate matchit plugin, '%' jumps to html tags, if/else/end, etc
+endif
 set showmatch		" Show matching brackets.
 
 
