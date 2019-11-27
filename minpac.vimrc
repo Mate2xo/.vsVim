@@ -24,6 +24,7 @@ function! PackInit() abort
 
     " UI
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
+  call minpac#add('tpope/vim-fugitive') "Git integration
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
 
     " Language support
@@ -34,7 +35,7 @@ function! PackInit() abort
   call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
   "
   " Uncomment the following line to pull any local custom configurations.
-  source ~/.vim/custom_plugins.vimrc
+  " source ~/.vim/custom_plugins.vimrc
 
   echo "Please wait... and restart Vim after updating plugins"
 endfunction
