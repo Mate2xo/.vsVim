@@ -23,19 +23,18 @@ function! PackInit() abort
   call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
 
     " UI
-  call minpac#add('mate2xo/noise-conceal') " replace common keywords with short symbols
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
-  
+
     " Language support
   call minpac#add('sheerun/vim-polyglot')
   call minpac#add('tpope/vim-rails')
-  
+
     " Autocompletion
   call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
   "
-  " Uncomment the following line to pull any local custom configurations. 
-  " source ~/.vim/custom_plugins.vimrc
+  " Uncomment the following line to pull any local custom configurations.
+  source ~/.vim/custom_plugins.vimrc
 
   echo "Please wait... and restart Vim after updating plugins"
 endfunction
