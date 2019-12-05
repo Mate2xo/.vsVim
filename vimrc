@@ -34,6 +34,7 @@ command! PackClean  source ~/.vim/minpac.vimrc | call PackInit() | call minpac#c
 command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#status()
 
 colorscheme codedark
+let g:airline_theme = 'codedark' " Airline local plugin codedark theme integration
 
 " FZF
   set rtp+=~/.vim/pack/minpac/start/fzf
