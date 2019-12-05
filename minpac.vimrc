@@ -12,6 +12,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-repeat') "'.' key to work also with plugins commands
 
     " Edition
+  call minpac#add('jiangmiao/auto-pairs') "auto-close {, [, (, ', ...
   call minpac#add('tpope/vim-commentary') "'gcc' to comment lines
   call minpac#add('tpope/vim-endwise') "auto-insert 'end' keywords to 'if' control flows
   call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', ...
@@ -23,6 +24,7 @@ function! PackInit() abort
   call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
 
     " UI
+  call minpac#add('vim-airline/vim-airline')  "enhanced status line
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
   call minpac#add('tpope/vim-fugitive') "Git integration
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
