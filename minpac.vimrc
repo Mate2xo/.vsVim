@@ -35,6 +35,7 @@ function! PackInit() abort
 
     " Autocompletion
   call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
+  call minpac#add('honza/vim-snippets')
   "
   " Uncomment the following line to pull any local custom configurations.
   " source ~/.vim/custom_plugins.vimrc

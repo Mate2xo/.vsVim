@@ -23,6 +23,8 @@ endif
   nmap <Leader>h :Helptags<CR>
 
 nmap <Leader>t :Tags<CR>
+"Select all
+nmap <C-a> ggVG
 
 
 "===============> Plugins management <===============
@@ -182,7 +184,7 @@ set omnifunc=syntaxcomplete#Complete
   " Do default action for previous item.
   nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
   " Resume latest coc list
-  nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+  nnoremap <silent> <space>r  :<C-u>CocListResume<CR>
 
 
 " Some default settings are set with Sensible plugin
