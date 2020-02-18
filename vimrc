@@ -30,10 +30,10 @@ nmap <C-a> ggVG
 "===============> Plugins management <===============
 " add/delete plugins in minpac.vimrc
 " use :PackUpdate command inside Vim editor to install/update all plugins
-command! PackUpdate source ~/.vim/minpac.vimrc | call PackInit() | call minpac#update('', {'do': 'source $MYVIMRC'})
+command! PackUpdate source ~/.vsVim/minpac.vimrc | call PackInit() | call minpac#update('', {'do': 'source $MYVIMRC'})
 " use :PackClean command to delete plugins not listed in minpac.vimrc
-command! PackClean  source ~/.vim/minpac.vimrc | call PackInit() | call minpac#clean()
-command! PackStatus source ~/.vim/minpac.vimrc | call PackInit() | call minpac#status()
+command! PackClean  source ~/.vsVim/minpac.vimrc | call PackInit() | call minpac#clean()
+command! PackStatus source ~/.vsVim/minpac.vimrc | call PackInit() | call minpac#status()
 
 colorscheme codedark
 let g:airline_theme = 'codedark' " Airline local plugin codedark theme integration
@@ -260,8 +260,3 @@ if !has('nvim')
 endif
 set showmatch		" Show matching brackets.
 
-
-"===============> Miscellaneous <===============
-
-" Uncomment the following line to pull any local custom configurations.
-" source ~/.vim/custom_settings.vimrc
