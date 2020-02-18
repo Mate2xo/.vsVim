@@ -8,7 +8,7 @@ A simple, ready-to-use basic Vim IDE setup for web development with pre-configur
 
 ### If you use Ruby
 
-* Check with `$ vim --version` if you have `+ruby`. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`). If you don't care about Ruby programming, you should be good to go
+* Check with `$ vim --version` if you have `+ruby`. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`).
 
 ### Recommended
 
