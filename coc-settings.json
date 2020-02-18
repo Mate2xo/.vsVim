@@ -1,5 +1,22 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "javascriptreact", "json"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "erb",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "Markdown",
+    "ruby"
+  ],
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.includeLanguages": {
+    "eruby": "html"
+  },
+  "html.format.enable": true,
+  "html.filetypes": ["html", "handlebars", "erb"],
+  "html.suggest.html5": true,
+  "html.validate.html": true,
   "prettier.eslintIntegration": true,
   "suggest.noselect": false
 }

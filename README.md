@@ -14,27 +14,33 @@ A simple, ready-to-use basic Vim IDE setup for web development with pre-configur
 
 * Install [The Silver Searcher (Ag)](https://github.com/ggreer/the_silver_searcher) to be able to search a pattern through file with `<Leader><Shift-F>` (equivalent of `<Ctrl-Shift-F>` in VScode). It's much faster than the default `$ find` command.
 
-### Install (on a Linux environment)
+### Install
 
-* Clone this repo in your `~/` folder for linux users, or your default vim config folder for other OS (I don't know how other OS are setup with Vim, sorry).
-* If you use NeoVim, follow these [instructions](https://thoughtbot.com/upcase/videos/meet-neovim) to connect NeoVim's config files to `~/.vim` folder
-* Launch vim with `$ vim +PackUpdate` command
+* In your home folder: 
+  * `$ git clone https://github.com/Mate2xo/.vsVim.git` 
+  * `$ echo "source ~/.vsVim/vimrc" >> .vimrc`
+  * If you use Vim, `$ cat ~/.vsVim/coc-settings.json > ~/.vim/coc-settings.json`
+  * If you use NeoVim,
+    * follow these [instructions](https://thoughtbot.com/upcase/videos/meet-neovim) to connect NeoVim's config files to Vim
+    * `$ cat ~/.vsVim/coc-settings.json > ~/.config/nvim/coc-settings.json`
+* Launch Vim with `$ vim +PackUpdate` 
 * Restart Vim and start working
 
-### Customization
+### Flavors
 
 2 different flavors as switchable branches with git:
 * `coc-js` (default) branch for a freshly-installed-VSCode-like setup
 * `coc-ruby-js` branch for up-to-date ruby/rails support (with solargraph LSP) and rails very useful shortcuts (`:help rails`)
 
-If you want to add your own customizations to this setup, without overwriting the `~/.vim` folder when you update this repo, create `custom_settings.vimrc` (for `vimrc` customization) and `custom_plugins.vimrc` (to add other plugins) files instead. These files are pulled at the end of `vimrc` and `minpac.vimrc` (you'll need to uncomment related lines in these files).
-
 ## What's included / How to use
 
 Global documentation fuzzy search is available with `<Leader-H>`
 
-* [minpac plugin manager](https://github.com/k-takata/minpac): just put the repo names of the plugins you want to add in `custom_plugins.vimrc` (take example on what's already included in `minpac.vimrc`), and run `:PackUpdate`, and/or `:PackClean` to delete plugins that are not listed there.
-* Essentials:
+* [minpac plugin manager](https://github.com/k-takata/minpac)
+  This setup uses it's own plugin manager and should not conflit with your own plugin management solution, as it is only loaded when explicitly called. If you want to use minpac to handle your favorite plugins :
+  * 1. register your plugins : create a `custom_plugins.vimrc` file in `~/.vsVim`, and add `call minpac#add('plugin/url/path')`. Check `minpac.vimrc` for some examples
+  * 2. inside vim, use `:PackUpdate` to install/update plugins. `:PackClean` will uninstall any plugin that are not listed in `minpac.vimrc` and `custom_plugins.vimrc`
+* Essentials
   * [vim-repeat](https://github.com/tpope/vim-repeat): allow `.` command to be also usable for plugin commands
   * [vim-sensible](https://github.com/tpope/vim-sensible): set sensible vimrc defaults
   * [vim-polyglot](https://github.com/sheerun/vim-polyglot): languages pack (syntax highlighting, ...)
@@ -44,7 +50,7 @@ Global documentation fuzzy search is available with `<Leader-H>`
   * [auto-pair](https://github.com/jiangmiao/auto-pairs): auto-close {[("")]}
   * [vim-surround](https://github.com/tpope/vim-surround): quickly change surrounding {[("")]} : ``cs[{`` -> Changes Surrounding [] into {}
   * [vim-rails](https://github.com/tpope/vim-rails): for Ruby on Rails related shortcuts and commands
-* Search plugins:
+* Search plugins
   * [NERDTree](https://github.com/scrooloose/nerdtree) (file explorer). Access with `<Leader><Shift-E>`, once inside acces file menu with `m`. Documentation: `:help nerdtree`.
   * [FZF](https://github.com/junegunn/fzf.vim): Access fuzzy file search with `<Leader><p>`, fuzzy pattern search in files with `<Leader><Shift-F>`, :help documentation fuzzy search with `<Leader><h>`. Documentation: `:help fzf`
 * Linting, Autocompletion (VSCode's language server): [CoC](https://github.com/neoclide/coc.nvim). A few sensible CoC extensions have been added and configured (prettier, emmet, JS language server, ...). Check the list in `vimrc`'s `g:coc_global_extensions`.
