@@ -27,6 +27,7 @@ function! PackInit() abort
   call minpac#add('vim-airline/vim-airline')  "enhanced status line
   call minpac#add('tomasiser/vim-code-dark') "VSCode color theme
   call minpac#add('tpope/vim-fugitive') "Git integration
+  call minpac#add('mhinz/vim-signify') "Git diff in sign column
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
 
     " Language support
