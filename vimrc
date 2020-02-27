@@ -22,9 +22,24 @@ endif
   "search vim's :help tags
   nmap <Leader>h :Helptags<CR>
 
+  " neoVim terminal behavior
+  if has('nvim')
+    " exit terminal
+    tnoremap <Esc> <C-\><C-n>
+    " simulate regular Esc in terminal
+    tnoremap <A-[> <Esc>
+    " move between windows with Alt-h/j/k/l
+    tnoremap <a-h> <c-\><c-n><c-w>h
+    tnoremap <a-j> <c-\><c-n><c-w>j
+    tnoremap <a-k> <c-\><c-n><c-w>k
+    tnoremap <a-l> <c-\><c-n><c-w>l
+    nnoremap <a-h> <c-w>h
+    nnoremap <a-j> <c-w>j
+    nnoremap <a-k> <c-w>k
+    nnoremap <a-l> <c-w>l
+  endif
+
 nmap <Leader>t :Tags<CR>
-"Select all
-nmap <C-a> ggVG
 
 
 "===============> Plugins management <===============
