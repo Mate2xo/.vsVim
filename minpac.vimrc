@@ -16,6 +16,9 @@ function! PackInit() abort
   call minpac#add('tpope/vim-commentary') "'gcc' to comment lines
   call minpac#add('tpope/vim-endwise') "auto-insert 'end' keywords to 'if' control flows
   call minpac#add('tpope/vim-surround') "quickly change surrounding {, [, (, ', ...
+  if has('nvim')
+    call minpac#add('machakann/vim-highlightedyank') "briefly hilight yanked text
+  endif
 
     " Search
   call minpac#add('junegunn/fzf', { 'do': './install --bin' })

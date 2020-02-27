@@ -231,6 +231,9 @@ set hidden		" Hide buffers when they are abandoned
   set undofile
 
 set clipboard=unnamed   " Link to OS clipboard
+if has('nvim')
+  set inccommand=split   " Live update while writing s/old/new commands 
+endif
 
 " Allow syntax folding
   set foldmethod=syntax
