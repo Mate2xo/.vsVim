@@ -6,40 +6,46 @@ A simple, ready-to-use basic Vim IDE setup for web development with pre-configur
 
 ## Set up
 
-### If you use Ruby
+### Flavors
 
-* Check with `$ vim --version` if you have `+ruby`. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`).
-
-### Recommended
-
-* Install [The Silver Searcher (Ag)](https://github.com/ggreer/the_silver_searcher) to be able to search a pattern through file with `<Leader><Shift-F>` (equivalent of `<Ctrl-Shift-F>` in VScode). It's much faster than the default `$ find` command.
+2 different flavors are available as switchable branches with git:
+* `coc-js` (default) branch for a freshly-installed-VSCode-like setup
+* `coc-ruby-js` branch for up-to-date ruby/rails support (with solargraph LSP) and rails very useful shortcuts (`:help rails`)
+  * For Vim : check with `$ vim --version` if you have `+ruby`. If not, install and use either `vim-athena` or `vim-gnome` (this last one seems to be launchable via `$ vim.gtk3`).
+  * For NeoVim : use `:checkhealth` to see if you need any dependencies
 
 ### Install
 
-* In your home folder: 
-  * `$ git clone https://github.com/Mate2xo/.vsVim.git` 
-  * `$ echo "source ~/.vsVim/vimrc" >> .vimrc`
-  * If you use Vim, `$ cat ~/.vsVim/coc-settings.json > ~/.vim/coc-settings.json`
-  * If you use NeoVim,
-    * follow these [instructions](https://thoughtbot.com/upcase/videos/meet-neovim) to connect NeoVim's config files to Vim
-    * `$ cat ~/.vsVim/coc-settings.json > ~/.config/nvim/coc-settings.json`
-* Launch Vim with `$ vim +PackUpdate` 
+* In your home folder:
+  * `$ git clone https://github.com/Mate2xo/.vsVim.git`
+  * Choose the branch(flavor) you want to use in `~/.vsVim` folder
+* If you use Vim:
+  * `$ cat ~/.vsVim/coc-settings.json > ~/.vim/coc-settings.json`
+  * `$ echo "source ~/.vsVim/vimrc" >> ~/.vimrc`
+* If you use NeoVim:
+  * `$ cat ~/.vsVim/coc-settings.json > ~/.config/nvim/coc-settings.json`
+  * `$ echo "source ~/.vsVim/vimrc" >> ~/.config/nvim/init.vim`
+* Launch Vim with `$ vim +PackUpdate`
 * Restart Vim and start working
 
-### Flavors
+### Recommended
 
-2 different flavors as switchable branches with git:
-* `coc-js` (default) branch for a freshly-installed-VSCode-like setup
-* `coc-ruby-js` branch for up-to-date ruby/rails support (with solargraph LSP) and rails very useful shortcuts (`:help rails`)
+Install [The Silver Searcher (Ag)](https://github.com/ggreer/the_silver_searcher) to be able to search a pattern through file with `<Leader><Shift-F>` (equivalent of `<Ctrl-Shift-F>` in VScode). It's much faster than the default `$ find` command.
+
+### If you want to share Vim and NeoVim's config
+
+Follow these [instructions](https://thoughtbot.com/upcase/videos/meet-neovim) to connect NeoVim's config files to Vim. NeoVim will then use `~/.vim`'s setup. This could be an easy way to try NeoVim with your current Vim config
 
 ## What's included / How to use
 
 Global documentation fuzzy search is available with `<Leader-H>`
 
 * [minpac plugin manager](https://github.com/k-takata/minpac)
-  This setup uses it's own plugin manager and should not conflit with your own plugin management solution, as it is only loaded when explicitly called. If you want to use minpac to handle your favorite plugins :
-  * 1. register your plugins : create a `custom_plugins.vimrc` file in `~/.vsVim`, and add `call minpac#add('plugin/url/path')`. Check `minpac.vimrc` for some examples
-  * 2. inside vim, use `:PackUpdate` to install/update plugins. `:PackClean` will uninstall any plugin that are not listed in `minpac.vimrc` and `custom_plugins.vimrc`
+  This setup uses it's own plugin manager and should not conflit with your own plugin management solution, as it is only loaded when explicitly called.
+  If you want to use only minpac to handle your plugins :
+  * 1. register your plugins : create a `custom_plugins.vimrc` file in `~/.vsVim`, and add `call minpac#add('plugin/url/path')`. Check `~/.vsVim/minpac.vimrc` for some examples
+  * 2. inside Vim, use `:PackUpdate` to install/update plugins.
+  * `:PackClean` will uninstall any plugin that are not listed in `~/.vsVim/minpac.vimrc` and `~/.vsVim/custom_plugins.vimrc`.
 * Essentials
   * [vim-repeat](https://github.com/tpope/vim-repeat): allow `.` command to be also usable for plugin commands
   * [vim-sensible](https://github.com/tpope/vim-sensible): set sensible vimrc defaults
