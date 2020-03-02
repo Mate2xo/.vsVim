@@ -65,6 +65,8 @@ Global documentation fuzzy search is available with `<Leader-H>`
   * log: `:Glog`. Navigate through the log quicklist with `:cn` and `:cp`, close the quicklist with `:cclo`
   * check `:help fugitive` for more
   * vim-signify plugin shows diff icons in the sign column
+* Terminal integration: [neoterm](https://github.com/kassio/neoterm)
+  * to pop a terminal window -> `:Ttoggle` in Vim, `<Ctrl-Space>` (or Ctrl-backtick) in NeoVim
 
 
 ### Contributions

@@ -22,7 +22,7 @@ endif
   "search vim's :help tags
   nmap <Leader>h :Helptags<CR>
 
-  " neoVim terminal behavior
+  " Terminal behavior
   if has('nvim')
     " exit terminal
     tnoremap <Esc> <C-\><C-n>
@@ -66,8 +66,13 @@ let g:airline_theme = 'codedark' " Airline local plugin codedark theme integrati
   let NERDTreeShowLineNumbers=1
   let NERDTreeAutoDeleteBuffer = 1
 
-" Autocompletion : Deoplete, LanguageClient, LSPs
-set omnifunc=syntaxcomplete#Complete
+" Neoterm
+  let g:neoterm_term_per_tab = 1
+  let g:neoterm_autoinsert = 1
+  let g:neoterm_default_mod = 'botright'
+  if has('nvim')
+    nmap <C-Space> :Ttoggle <Enter> 
+  endif
 
 " CoC
 "  Extensions
