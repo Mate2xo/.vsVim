@@ -32,6 +32,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-fugitive') "Git integration
   call minpac#add('mhinz/vim-signify') "Git diff in sign column
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
+  call minpac#add('kassio/neoterm') "terminal buffers management helpers
 
     " Language support
   call minpac#add('sheerun/vim-polyglot')
