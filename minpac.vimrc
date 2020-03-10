@@ -1,7 +1,11 @@
 function! PackInit() abort
   packadd minpac
   if !exists('*minpac#init')
-    !git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+    if has('nvim')
+      !git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
+    else
+      !git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+    endif
     packadd minpac
   endif
 
