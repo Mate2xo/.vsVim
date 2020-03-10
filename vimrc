@@ -54,7 +54,12 @@ colorscheme codedark
 let g:airline_theme = 'codedark' " Airline local plugin codedark theme integration
 
 " FZF
-  set rtp+=~/.vim/pack/minpac/start/fzf
+  if has('nvim')
+    set rtp+=~/.config/nvim/pack/minpac/start/fzf
+  else
+    set rtp+=~/.vim/pack/minpac/start/fzf
+  endif
+
   command! -bang -nargs=* Ag
     \ call fzf#vim#ag(<q-args>,
     \                 <bang>0 ? fzf#vim#with_preview('up:60%')
