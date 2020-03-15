@@ -37,6 +37,8 @@ function! PackInit() abort
   call minpac#add('mhinz/vim-signify') "Git diff in sign column
   call minpac#add('tpope/vim-sensible') "sensible vanilla default settings
   call minpac#add('kassio/neoterm') "terminal buffers management helpers
+  call minpac#add('ryanoasis/vim-devicons')
+  call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
 
     " Language support
   call minpac#add('sheerun/vim-polyglot')
