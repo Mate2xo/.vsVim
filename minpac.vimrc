@@ -31,6 +31,9 @@ function! PackInit() abort
   call minpac#add('junegunn/fzf.vim') "quick lookup of/jump to a file with <C-p>
   call minpac#add('scrooloose/nerdtree') "file tree sidebar
   call minpac#add('Xuyuanp/nerdtree-git-plugin') "show file git status in NerdTree
+  call minpac#add('tpope/vim-projectionist') "rake.vim dependency
+  call minpac#add('tpope/vim-rake') "configure path and ctags for /lib and /ext
+  call minpac#add('tpope/vim-bundler') "configure path and tags for gems in the Gemfile
 
     " UI
   call minpac#add('vim-airline/vim-airline')  "enhanced status line
