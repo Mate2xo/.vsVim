@@ -25,6 +25,7 @@ function! PackInit() abort
   endif
   call minpac#add('kana/vim-textobj-user') "textobj-rubyblock dependency
   call minpac#add('nelstrom/vim-textobj-rubyblock') "select rubyblocks with `ir` and `ar`
+  call minpac#add('tpope/vim-unimpaired') "common useful shortcuts
 
     " Search
   call minpac#add('junegunn/fzf', { 'do': './install --bin' })
