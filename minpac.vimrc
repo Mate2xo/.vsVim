@@ -23,6 +23,8 @@ function! PackInit() abort
   if has('nvim')
     call minpac#add('machakann/vim-highlightedyank') "briefly hilight yanked text
   endif
+  call minpac#add('kana/vim-textobj-user') "textobj-rubyblock dependency
+  call minpac#add('nelstrom/vim-textobj-rubyblock') "select rubyblocks with `ir` and `ar`
 
     " Search
   call minpac#add('junegunn/fzf', { 'do': './install --bin' })
