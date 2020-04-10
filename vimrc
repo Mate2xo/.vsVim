@@ -68,11 +68,11 @@ let g:airline_theme = 'codedark' " Airline local plugin codedark theme integrati
 
 " NERDTree
   let NERDTreeQuitOnOpen=1
+  let g:NERDTreeWinSize=60
   let NERDTreeShowLineNumbers=1
   let NERDTreeAutoDeleteBuffer = 1
 
 " Neoterm
-  let g:neoterm_term_per_tab = 1
   let g:neoterm_autoinsert = 1
   let g:neoterm_default_mod = 'botright'
   if has('nvim')
